@@ -1,39 +1,48 @@
-        let answer = Math.floor(Math.random() * 100) + 1;
+        const answer = Math.floor(Math.random() * 100) + 1;
         console.log(answer);
+        const guessField = document.querySelector('.number-input');
+        const resultField = document.querySelector('.result');
+        const userName = document.querySelector('.name-input');
+        const playButton = document.querySelector('.play-button');
+        const image = document.querySelector('.result-image');
+        const attemptNumberDisplay = document.querySelector('.attempt-number');
+        let tooHighImagesArray = [
+            'images/4g0g19.jpg',
+            'images/4g0fev.jpg'
+        ];
+        let tooLowImagesArray = [
+            'images/3jgukd.png',
+            'images/4g0fin.jpg'
+        ];
+        let attemptNumber = 0;
+        
 
-        function game (answer, playerName) {
-             playerName = userName;
-            console.log(userName);
-            clue.innerHTML = '';
-            let guess = +prompt('Enter a value');
-            // if (typeof guess === NaN){
-            //     prompt('Invalid entry');
-            //     game(answer, playerName);
-            // }else{
-                if (guess === answer){
-                    console.log(`${playerName} wins!`);
-                    answerDisplay.innerHTML = answer;
-                    }else if (guess < answer){
-                        clue.innerHTML = 'It is more';
-                        game(answer, playerName);
-                    }else if (guess > answer){
-                        clue.innerHTML = 'It is less';
-                        game(answer, playerName);
-                    }     
-            // }         
+
+        function game(){
+            let userGuess = Number(guessField.value);
+            const randomLowArrayNumber = Math.floor(Math.random() * tooLowImagesArray.length);
+            const randomHighArrayNumber = Math.floor(Math.random() * tooHighImagesArray.length);
+
+            if (userGuess === answer){
+                resultField.innerHTML = `Congratulations, ${userName.value}, you won!`;
+                image.src = './images/1843.jpg';
+            }else if (userGuess < answer){
+                resultField.innerHTML = 'Too low!';
+                image.src = tooLowImagesArray[randomLowArrayNumber];
+                attemptNumber ++;
+            }else if (userGuess > answer){
+                resultField.innerHTML = 'Too high!';
+                image.src = tooHighImagesArray[randomHighArrayNumber];
+                attemptNumber ++;
+            }
+            attemptNumberDisplay.innerHTML = attemptNumber; 
+
         }
 
+        playButton.addEventListener('click', game);
+        playButton.addEventListener('keyup', (e) => {
+            if (e.keyCode === 13){
+                game();
+            }
+        });
 
-        
-    const userName = document.querySelector('.name-input').value;
-    const playButton = document.querySelector('.play-button');
-    const clue = document.querySelector('.high-low-indicator');
-    let userGuess = document.querySelector('.number-input').value;
-    const answerDisplay = document.querySelector('.answer');
-        
-        
-        
-        
-    playButton.addEventListener('click', () => {
-        game(answer, userName);
-    });
