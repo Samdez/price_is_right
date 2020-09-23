@@ -23,20 +23,23 @@
             const randomLowArrayNumber = Math.floor(Math.random() * tooLowImagesArray.length);
             const randomHighArrayNumber = Math.floor(Math.random() * tooHighImagesArray.length);
 
-            if (userGuess === answer){
-                resultField.innerHTML = `Congratulations, ${userName.value}, you won!`;
-                image.src = './images/1843.jpg';
-            }else if (userGuess < answer){
-                resultField.innerHTML = 'Too low!';
-                image.src = tooLowImagesArray[randomLowArrayNumber];
-                attemptNumber ++;
-            }else if (userGuess > answer){
-                resultField.innerHTML = 'Too high!';
-                image.src = tooHighImagesArray[randomHighArrayNumber];
-                attemptNumber ++;
+            if(typeof userGuess === NaN){
+                resultField.innerHTML = 'Please enter a number';
+            }else{
+                if (userGuess === answer){
+                    resultField.innerHTML = `Congratulations, ${userName.value}, you won!`;
+                    image.src = './images/1843.jpg';
+                }else if (userGuess < answer){
+                    resultField.innerHTML = 'Too low!';
+                    image.src = tooLowImagesArray[randomLowArrayNumber];
+                    attemptNumber ++;
+                }else if (userGuess > answer){
+                    resultField.innerHTML = 'Too high!';
+                    image.src = tooHighImagesArray[randomHighArrayNumber];
+                    attemptNumber ++;
+                }
+                attemptNumberDisplay.innerHTML = attemptNumber; 
             }
-            attemptNumberDisplay.innerHTML = attemptNumber; 
-
         }
 
         playButton.addEventListener('click', game);
