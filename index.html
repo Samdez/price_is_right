@@ -11,21 +11,22 @@
 
     <script>
         let userName = prompt(`What's your name?`);
-        let answer = 34;
+        let answer = Math.floor(Math.random() * 100) + 1;
         let userGuess;
+        console.log(answer);
 
         // function game (){
-        //     let userGuess = +prompt(`What's your answer?`);
+        //     userGuess = +prompt(`What's your answer?`);
         //     switch(true){
-        //         case userGuess > answer:
+        //         case (userGuess > answer):
         //             console.log("It is less");
         //             game();
         //             break;
-        //         case answer < userGuess:
+        //         case (userGuess < answer):
         //             console.log("It is more");
         //             game();
         //             break;
-        //         case answer === userGuess:
+        //         case (answer === userGuess):
         //             console.log(`${userName} wins!`);
         //             break;
         //         default:
