@@ -6,49 +6,13 @@
     <title>Price is right</title>
 </head>
 <body>
+    <h1>The price is right</h1>
+    <input type="text" placeholder="Enter your name here">
+    <input type="text" placeholder="Enter your guess here">
+    <img src="" alt="">
+    <div class="answer"></div>
 
 
-
-    <script>
-        let userName = prompt(`What's your name?`);
-        let answer = Math.floor(Math.random() * 100) + 1;
-        let userGuess;
-        console.log(answer);
-
-        // function game (){
-        //     userGuess = +prompt(`What's your answer?`);
-        //     switch(true){
-        //         case (userGuess > answer):
-        //             console.log("It is less");
-        //             game();
-        //             break;
-        //         case (userGuess < answer):
-        //             console.log("It is more");
-        //             game();
-        //             break;
-        //         case (answer === userGuess):
-        //             console.log(`${userName} wins!`);
-        //             break;
-        //         default:
-        //             console.log('Invalid entry');
-        //     }
-        // }
-
-        function game () {
-            userGuess = +prompt(`What's your answer?`);
-            if (userGuess === answer){
-                console.log(`${userName} wins!`);
-            }else if (userGuess < answer){
-                console.log('It is more');
-                game();
-            }else if (userGuess > answer){
-                console.log('It is less');
-                game();
-            }
-         }
-
-        game();
-
-    </script>
+<script src="script.js"></script>
 </body>
 </html>
