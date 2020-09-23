@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Price is right</title>
 </head>
 <body>
     <h1>The price is right</h1>
-    <input type="text" placeholder="Enter your name here">
-    <input type="text" placeholder="Enter your guess here">
-    <img src="" alt="">
+    <div class="buttons-div">
+        <input class="button name-input" type="text" placeholder="Enter your name here" required>
+        <input class="button number-input" type="text" placeholder="Enter your guess here" required>
+        <input type="submit" class="button play-button" value="PLAY">
+    </div>
+    
+    
+    <div class="clue">
+        <p class="high-low-indicator"></p>
+        <img src="" alt="">
+    </div>
+    
     <div class="answer"></div>
 
 
