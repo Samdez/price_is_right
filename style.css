@@ -4,10 +4,11 @@
     box-sizing: border-box;
 }
 
-body, button {
-    font-family: 'Roboto', sans-serif;
-    background: rgb(2,0,36);
-    background: radial-gradient(circle, rgb(53, 45, 202) 0%, rgb(68, 68, 179) 35%, rgba(0,212,255,1) 100%);
+html {
+    background: url(./images/risoli.jpg) no-repeat center center fixed;
+    background-size: cover;
+    color: rgb(253, 147, 165);
+    font-family: 'Comic Sans MS', sans-serif;
     font-size: 40px;
 }
 
@@ -28,7 +29,7 @@ p {
     margin-top: 10px;
 }
 .button {
-    height: 52px;
+    padding: 20px 0;
     width: 140px;
     margin-top: 10px;
     border: 1px solid rgb(0, 0, 156);
