@@ -6,6 +6,9 @@
 
 body, button {
     font-family: 'Roboto', sans-serif;
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgb(53, 45, 202) 0%, rgb(68, 68, 179) 35%, rgba(0,212,255,1) 100%);
+    font-size: 40px;
 }
 
 h1 {

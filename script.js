@@ -6,6 +6,7 @@
         const playButton = document.querySelector('.play-button');
         const image = document.querySelector('.result-image');
         const attemptNumberDisplay = document.querySelector('.attempt-number');
+        const form = document.querySelector('form');
         let tooHighImagesArray = [
             'images/4g0g19.jpg',
             'images/4g0fev.jpg'
@@ -19,9 +20,14 @@
 
 
         function game(){
-            let userGuess = Number(guessField.value);
+            let userGuess = +(guessField.value);
+            console.log(typeof userGuess, userGuess);
+            if (userGuess === NaN){
+                alert('Please enter a valid number');
+            }
             const randomLowArrayNumber = Math.floor(Math.random() * tooLowImagesArray.length);
             const randomHighArrayNumber = Math.floor(Math.random() * tooHighImagesArray.length);
+
 
             if (userGuess === answer){
                 resultField.innerHTML = `Congratulations, ${userName.value}, you won!`;
@@ -38,11 +44,8 @@
             attemptNumberDisplay.innerHTML = attemptNumber; 
 
         }
-
-        playButton.addEventListener('click', game);
-        playButton.addEventListener('keyup', (e) => {
-            if (e.keyCode === 13){
-                game();
-            }
+        form.addEventListener('submit', (e) => {
+            game();
+            e.preventDefault();
         });
 
